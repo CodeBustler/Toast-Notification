@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	padding: 10px;
+	font-family: "Montserrat", sans-serif;
+	position: relative;
+}
+
+button {
+	width: 100px;
+	padding: 10px 15px;
+	font-size: large;
+	margin: 10px;
+}
+
+.toasts-container {
+	width: 500px;
+	position: absolute;
+	padding-right: 40px;
+	bottom: 0;
+	right: 0;
+	overflow: hidden;
+}
+
+.toasts-container div {
+	width: 100%;
+	height: 80px;
+	background-color: white;
+	border: 1px solid lightgray;
+	box-shadow: 10px 10px 10px lightgrey;
+	padding: 25px 0 0 20px;
+	font-size: 20px;
+	margin-bottom: 30px;
+	font-weight: 600;
+	border-radius: 8px;
+	position: relative;
+	animation: toastMove 0.4s linear;
+}
+
+@keyframes toastMove {
+	0% {
+		transform: translateX(100%);
+	}
+
+	100% {
+		transform: translateX(0%);
+	}
+}
+
+.toasts-container div::after {
+	content: "";
+	width: 100%;
+	display: block;
+	height: 8px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+	animation: leftMove 5s linear;
+}
+
+@keyframes leftMove {
+	100% {
+		width: 0;
+	}
+}
+
+.toasts-container div i {
+	margin-right: 15px;
+}
+
+.success {
+	color: limegreen;
+}
+
+.success::after {
+	background-color: limegreen;
+}
+
+.failure {
+	color: tomato;
+}
+
+.failure::after {
+	background-color: tomato;
+}
+
+.alert {
+	color: orange;
+}
+
+.alert::after {
+	background-color: orange;
+}
+
+footer {
+	text-align: left;
+	margin: 20px;
+}
+h1 {
+	padding: 10px;
+	color: cornflowerblue;
+}
